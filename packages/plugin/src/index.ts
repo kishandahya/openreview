@@ -1,7 +1,7 @@
-import { tool } from "@opencode-ai/plugin"
+import { tool, type ToolDefinition } from "@opencode-ai/plugin"
 import * as Pipeline from "@openreview/core/pipeline"
 
-export default tool({
+const review: ToolDefinition = tool({
   description: `Review a GitHub pull request using AI analysis.
 
 Runs a 6-phase review pipeline: context loading, copy/move detection, semantic grouping, bug detection (4-pass), auto-fix generation, scope drift analysis, and summary verdict.
@@ -78,3 +78,5 @@ Requires ANTHROPIC_API_KEY or OPENAI_API_KEY environment variable.`,
     return lines.join("\n")
   },
 })
+
+export default review
