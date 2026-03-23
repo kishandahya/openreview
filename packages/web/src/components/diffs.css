@@ -1,0 +1,113 @@
+[data-component="diffs"] [data-slot="toolbar"] {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 2rem;
+  font-size: 13px;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
+}
+
+[data-component="diffs"] [data-slot="toolbar"] button {
+  color: var(--blue);
+  font-size: 12px;
+}
+
+[data-component="diffs"] [data-slot="file-block"] {
+  border-bottom: 1px solid var(--border);
+}
+
+[data-component="diffs"] [data-slot="file-header"] {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.625rem 2rem;
+  font-size: 13px;
+  text-align: left;
+}
+
+[data-component="diffs"] [data-slot="file-header"]:hover {
+  background: var(--surface);
+}
+
+[data-component="diffs"] [data-slot="chevron"] {
+  font-size: 10px;
+  color: var(--text-dim);
+  transition: transform 0.15s;
+}
+
+[data-component="diffs"] [data-slot="chevron"][data-open="true"] {
+  transform: rotate(90deg);
+}
+
+[data-component="diffs"] [data-slot="status"] {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 0.125rem 0.375rem;
+  border-radius: 3px;
+}
+
+[data-component="diffs"] [data-slot="status"][data-type="added"] { color: var(--green); background: var(--green-bg); }
+[data-component="diffs"] [data-slot="status"][data-type="deleted"] { color: var(--red); background: var(--red-bg); }
+[data-component="diffs"] [data-slot="status"][data-type="modified"] { color: var(--text-dim); }
+[data-component="diffs"] [data-slot="status"][data-type="renamed"] { color: var(--purple); }
+
+[data-component="diffs"] [data-slot="file-name"] {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-component="diffs"] [data-slot="changes"] {
+  display: flex;
+  gap: 0.375rem;
+  font-size: 12px;
+}
+
+[data-component="diffs"] [data-slot="additions"] { color: var(--green); }
+[data-component="diffs"] [data-slot="deletions"] { color: var(--red); }
+
+[data-component="diffs"] [data-slot="diff-table"] {
+  font-size: 13px;
+  overflow-x: auto;
+}
+
+[data-component="diffs"] [data-slot="diff-line"] {
+  display: flex;
+  min-height: 20px;
+  line-height: 20px;
+}
+
+[data-component="diffs"] [data-slot="diff-line"][data-type="add"] { background: var(--green-bg); }
+[data-component="diffs"] [data-slot="diff-line"][data-type="remove"] { background: var(--red-bg); }
+
+[data-component="diffs"] [data-slot="line-num"] {
+  width: 50px;
+  text-align: right;
+  padding-right: 8px;
+  color: var(--text-faint);
+  user-select: none;
+  flex-shrink: 0;
+}
+
+[data-component="diffs"] [data-slot="line-marker"] {
+  width: 20px;
+  text-align: center;
+  color: var(--text-dim);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+[data-component="diffs"] [data-slot="line-text"] {
+  flex: 1;
+  white-space: pre;
+  padding-right: 1rem;
+}
+
+[data-component="diffs"] [data-slot="loading"] {
+  padding: 2rem;
+  color: var(--text-dim);
+  text-align: center;
+}

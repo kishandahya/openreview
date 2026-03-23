@@ -1,0 +1,31 @@
+[data-component="sidebar"] {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+[data-component="sidebar"] [data-slot="tabs"] {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+[data-component="sidebar"] [data-slot="tab"] {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-dim);
+  text-align: center;
+  border-bottom: 2px solid transparent;
+}
+
+[data-component="sidebar"] [data-slot="tab"][data-active="true"] {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+[data-component="sidebar"] [data-slot="content"] {
+  flex: 1;
+  overflow-y: auto;
+}

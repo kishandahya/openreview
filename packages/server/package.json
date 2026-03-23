@@ -1,0 +1,22 @@
+{
+  "name": "@openreview/server",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "dev": "bun run src/dev.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@openreview/core": "workspace:*",
+    "hono": "^4.0.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "@types/bun": "^1.2.0",
+    "@types/node": "^22.0.0"
+  }
+}
