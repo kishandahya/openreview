@@ -4,11 +4,18 @@ import * as Pipeline from "@openreview/core/pipeline"
 import { Config } from "@openreview/core/types"
 
 const args = process.argv.slice(2)
-const url = args.find((a) => !a.startsWith("--"))
+const url = args.find((a, i) => !a.startsWith("--") && (i === 0 || !args[i - 1]?.startsWith("--") || args[i - 1] === "--headless"))
 const headless = args.includes("--headless")
-const port = parseInt(args[args.indexOf("--port") + 1] ?? "3847", 10)
-const provider = args[args.indexOf("--provider") + 1] as "anthropic" | "openai" | undefined
-const mod = args[args.indexOf("--model") + 1]
+
+const flag = (name: string): string | undefined => {
+  const idx = args.indexOf(name)
+  if (idx === -1 || idx + 1 >= args.length) return undefined
+  return args[idx + 1]
+}
+
+const port = parseInt(flag("--port") ?? "3847", 10)
+const provider = flag("--provider") as "anthropic" | "openai" | undefined
+const mod = flag("--model")
 
 if (!url) {
   console.log("Usage: openreview <pr-url> [--headless] [--port N] [--provider anthropic|openai] [--model name]")
