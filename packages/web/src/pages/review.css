@@ -1,0 +1,37 @@
+[data-component="review"] {
+  display: grid;
+  grid-template-columns: 240px 1fr 340px;
+  grid-template-rows: 1fr auto;
+  height: 100vh;
+  overflow: hidden;
+}
+
+[data-component="review"] [data-slot="left"] {
+  grid-row: 1;
+  grid-column: 1;
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  background: var(--bg);
+}
+
+[data-component="review"] [data-slot="center"] {
+  grid-row: 1;
+  grid-column: 2;
+  overflow-y: auto;
+  background: var(--bg);
+}
+
+[data-component="review"] [data-slot="right"] {
+  grid-row: 1;
+  grid-column: 3;
+  border-left: 1px solid var(--border);
+  overflow-y: auto;
+  background: var(--bg);
+}
+
+[data-component="review"] [data-slot="bottom"] {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
